@@ -9,6 +9,7 @@ const defaultOptions = {
 
 exports.register = (server, options, next) => {
 
+    options = Object.assign(defaultOptions, options);
     const models = server.plugins['hapi-sequelize'].db.sequelize.models;
 
     Object.keys(models).filter((modelName) => {
@@ -19,10 +20,13 @@ exports.register = (server, options, next) => {
         const model = models[modelName];
 
         RouteBuilder.list(server, options, model);
-        RouteBuilder.create(server, options, model);
         RouteBuilder.get(server, options, model);
-        RouteBuilder.update(server, options, model);
-        RouteBuilder.delete(server, options, model);
+
+        if (!options.readOnly) {
+            RouteBuilder.create(server, options, model);
+            RouteBuilder.update(server, options, model);
+            RouteBuilder.delete(server, options, model);
+        }
     });
 
     next();

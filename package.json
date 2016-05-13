@@ -1,0 +1,34 @@
+{
+  "name": "hapi-sequelize-rest",
+  "version": "0.1.0",
+  "description": "RESTful Hapi routes based on sequelize mdoels",
+  "main": "index.js",
+  "scripts": {
+    "test": "lab -c -L",
+    "test-cover": "lab -c -r html -o ./test/artifacts/coverage.html && open ./test/artifacts/coverage.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Eric Cadow <eric@cadow.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "devDependencies": {
+    "code": "2.x.x",
+    "hapi": "13.x.x",
+    "hapi-sequelize": "^2.2.4",
+    "lab": "10.x.x",
+    "sequelize": "^3.23.1"
+  },
+  "dependencies": {
+    "boom": "^3.1.3",
+    "joi": "^8.1.0"
+  }
+}

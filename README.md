@@ -1,6 +1,6 @@
 # hapi-sequelize-rest
 
-RESTful Hapi routes based on sequelize mdoels
+RESTful Hapi routes based on sequelize models
 
 
 ## Install
@@ -12,10 +12,44 @@ $ npm install hapi-sequelize-rest
 
 ## Usage
 
-```bash
-$ echo "details coming soon"
+Register your sequelize models with [hapi-sequelize](https://github.com/danecando/hapi-sequelize)
+and then register hapi-sequelize rest.
+
+For example, in a manifest:
+```javascript
+{
+    plugin: {
+        register: './models',
+        options: {
+            uri: Config.get('/database/uri')
+        }
+    }
+},
+{
+    plugin: {
+        register: 'hapi-sequelize-rest',
+        options: {
+            prefix: '/api/v1',
+            readOnly: false
+        }
+    }
+}
 ```
 
+
+## Options
+
+Two options can be specified when registering hapi-sequelize-rest.
+
+1. `prefix`: You can provide a prefix for your api routes.
+By default route will be registered against the root of your website.
+
+2. `readOnly`: Set this to a truthy value and hapi-sequelize-rest will
+only register routes for GET-ing resources.
+
+## TODO
+1. Provide an option for authentication.
+2. Add some tests.
 
 ## License
 

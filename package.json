@@ -1,7 +1,7 @@
 {
   "name": "hapi-sequelize-rest",
   "version": "0.1.0",
-  "description": "RESTful Hapi routes based on sequelize mdoels",
+  "description": "RESTful Hapi routes based on sequelize models",
   "main": "index.js",
   "scripts": {
     "test": "lab -c -L",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/luckycadow/hapi-sequelize-rest.git"
   },
   "author": "Eric Cadow <eric@cadow.net>",
   "license": "MIT",
   "bugs": {
     "url": ""
   },
-  "homepage": "",
+  "homepage": "https://github.com/luckycadow/hapi-sequelize-rest",
   "engines": {
     "node": ">=4.0.0"
   },
